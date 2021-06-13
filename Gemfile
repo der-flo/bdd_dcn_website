@@ -31,7 +31,24 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'spring-commands-cucumber', '1.0.1'
+  gem 'spring-commands-rspec', '1.0.4'
+  gem 'spring-watcher-listen', '2.0.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+  gem 'capybara', '3.35.3'
+  gem 'cucumber-rails', '2.3.0', require: false
+  gem 'cuprite', '0.13'
+  gem 'database_cleaner', '2.0.1'
+  gem 'rspec-rails', '5.0.1'
+  gem 'simplecov', '0.21.2', require: false
+  gem 'rails-controller-testing', '1.0.5'
+  gem 'rspec-collection_matchers', '1.2.0'
+end
+
+gem 'http', '5.0.0'
