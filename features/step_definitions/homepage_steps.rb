@@ -25,3 +25,15 @@ end
 Then('I see {int} upcoming events') do |count|
   expect(page.all('.event').length).to eq count
 end
+
+Then('the first event shows the title {string}') do |title|
+  expect(page.first('.event')).to have_text title
+end
+
+Then('the first event shows the date {string}') do |date|
+  expect(page.first('.event')).to have_text date
+end
+
+Then('the first event links to Meetup') do
+  expect(page.first('.event')).to have_selector('a[href^=https\:\/\/www\.meetup\.com\/digital-craftsmanship-nordoberpfalz\/events\/]')
+end

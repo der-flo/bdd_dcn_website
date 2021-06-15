@@ -70,6 +70,9 @@
   </div>
 </div>
 
-<% @events.each do %>
-  <div class="event"></div>
+<% @events.each do |event| %>
+  <div class="event">
+    <h3><%= link_to event.title, event.meetup_url %></h3>
+    <h4><%= event.date.strftime('%d.%m.%Y') %></h4>
+  </div>
 <% end %>>
