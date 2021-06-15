@@ -21,3 +21,7 @@ end
 Then("I'm on the DCN meetup page") do
   expect(page.current_url).to eq 'https://www.meetup.com/de-DE/digital-craftsmanship-nordoberpfalz/'
 end
+
+Then('I see {int} upcoming events') do |count|
+  expect(page.all('.event').length).to eq count
+end
